@@ -1,0 +1,395 @@
+/* --- RESET & VARIABLES --- */
+:root {
+    --primary-color: #e91e63; /* Romantic Pink/Red */
+    --secondary-color: #ff80ab;
+    --bg-gradient: linear-gradient(135deg, #fff0f3 0%, #ffebee 100%);
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(233, 30, 99, 0.15);
+    --text-main: #4a4a4a;
+    --text-heading: #2c2c2c;
+    --font-heading: 'Playfair Display', serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-body: 'Lato', sans-serif;
+    --font-cinematic: 'Cinzel', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* --- UTILITIES & ANIMATIONS --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.text-center { text-align: center; }
+
+/* Fade In Up Animation Class */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+    padding: 40px;
+}
+
+/* --- HERO SECTION --- */
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+#hero h1 {
+    font-family: var(--font-script);
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    opacity: 0;
+    animation: fadeZoomIn 2s ease forwards 0.5s;
+}
+
+#hero p {
+    font-family: var(--font-cinematic);
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    color: var(--text-heading);
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards 1.5s;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    opacity: 0.6;
+}
+
+/* Background Floating Hearts */
+.bg-heart {
+    position: absolute;
+    color: var(--primary-color);
+    opacity: 0.3;
+    top: 100%;
+    animation: floatUp linear infinite;
+    z-index: -1;
+}
+
+/* --- TIMELINE SECTION --- */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    opacity: 0.3;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.timeline-item::after {
+    content: '❤️';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -12.5px;
+    background-color: #fff;
+    border: 2px solid var(--primary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.left { left: 0; text-align: right; }
+.right { left: 50%; text-align: left; }
+.left::after { right: -16px; }
+.right::after { left: -16px; }
+
+.content {
+    padding: 20px 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.content:hover { transform: translateY(-5px); }
+.content h3 { font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 5px; }
+.content p { font-size: 0.95rem; color: #666; }
+
+/* --- LOVE LETTER SECTION --- */
+.love-letter-container {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.love-letter-paper {
+    background: #fff;
+    padding: 60px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.love-letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: repeating-linear-gradient(45deg, var(--primary-color), var(--primary-color) 10px, #fff 10px, #fff 20px);
+}
+
+.love-letter-text {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #444;
+}
+
+/* --- GALLERY SECTION --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    height: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img { transform: scale(1.05); }
+
+/* --- PROMISES SECTION --- */
+.promises-list {
+    list-style: none;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.promises-list li {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.promises-list li::before {
+    content: '✨';
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+/* --- QUOTE SECTION --- */
+.quote-section {
+    background: #fff;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.big-quote {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--primary-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- PROPOSAL SECTION --- */
+.proposal-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: var(--font-cinematic);
+    letter-spacing: 2px;
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 30px;
+}
+
+.proposal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(233, 30, 99, 0.5);
+}
+
+/* --- MODALS --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.proposal-modal-content {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes fadeZoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-10px) translateX(-50%); }
+    60% { transform: translateY(-5px) translateX(-50%); }
+}
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- RESPONSIVE --- */
+@media screen and (max-width: 768px) {
+    /* Typography & Spacing */
+    .section-padding { padding: 60px 0; }
+    
+    #hero h1 { font-size: 2.8rem; }
+    #hero p { font-size: 1rem; letter-spacing: 2px; }
+
+    /* Timeline */
+    .timeline::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .timeline-item::after { left: 18px; }
+    .left::after, .right::after { left: 18px; }
+    .left, .right { text-align: left; }
+    
+    /* Love Letter */
+    .love-letter-paper { 
+        padding: 30px 20px; 
+        margin: 0 10px;
+        transform: rotate(0deg); 
+    }
+    .love-letter-text { font-size: 1rem; line-height: 1.6; }
+
+    /* Gallery */
+    .gallery-item { height: 250px; }
+
+    /* Promises */
+    .glass-card { padding: 30px 20px; }
+    .promises-list li { font-size: 1rem; }
+
+    /* Quote */
+    .big-quote { font-size: 1.5rem; }
+
+    /* Proposal */
+    .proposal-btn { padding: 15px 30px; font-size: 1rem; width: 90%; }
+    
+    /* Modals */
+    .proposal-modal-content { padding: 30px 20px; width: 90%; }
+    .proposal-modal-content h2 { font-size: 2rem !important; }
+    .close-modal { top: 10px; right: 15px; font-size: 30px; }
+}

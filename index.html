@@ -1,0 +1,195 @@
+<!-- 
+  ❤️ VALENTINE'S DAY PROPOSAL WEBSITE - CUSTOMIZATION GUIDE ❤️
+
+  Hello! To customize this website for your partner, simply edit the HTML content below.
+  Search for the following sections in the code:
+
+  1. TITLE & NAMES: 
+     Search for "id="hero-title"" to change the main greeting.
+     Search for "id="hero-subtitle"" to change the subtitle.
+
+  2. TIMELINE (OUR STORY):
+     Search for "class="timeline-item"". You can copy/paste these blocks to add more memories.
+     Change the dates and descriptions inside the <h3> and <p> tags.
+
+  3. LOVE LETTER:
+     Search for "id="love-letter-content"". Replace the text with your heartfelt message.
+
+  4. PHOTOS:
+     Search for "class="gallery-grid"". 
+     Replace the 'src' attributes (currently placeholder images) with your own image paths 
+     (e.g., src="images/us1.jpg").
+
+  5. PROMISES:
+     Search for "class="promises-list"". Edit the list items <li>.
+
+  6. MUSIC:
+     Search for "id="bg-music"". Uncomment the <audio> tag and add your mp3 file path.
+
+  Good luck! Make it magical. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+</head>
+<body>
+
+    <!-- OPTIONAL MUSIC -->
+    <!-- <audio id="bg-music" loop>
+        <source src="your-song.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <!-- EDIT TITLE HERE -->
+        <h1 id="hero-title">Happy Valentine's Day<br>Mein ❤️</h1>
+        <p id="hero-subtitle">A STORY OF US</p>
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e91e63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="section-padding" id="timeline">
+        <div class="container">
+            <h2 class="text-center reveal" style="font-family: var(--font-heading); margin-bottom: 50px; color: var(--primary-color);">Our Journey</h2>
+            <div class="timeline">
+                
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item left reveal">
+                    <div class="content">
+                        <h3>First Met</h3>
+                        <p>The day my life changed forever. I saw you and knew there was something special.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item right reveal">
+                    <div class="content">
+                        <h3>First Date</h3>
+                        <p>1990 bar </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item left reveal">
+                    <div class="content">
+                        <h3>First Trip</h3>
+                        <p>Graduation cenemory</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item right reveal">
+                    <div class="content">
+                        <h3>Today</h3>
+                        <p>爱在当下，期许未来。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LOVE LETTER SECTION -->
+    <section class="section-padding" style="background-color: #fff5f8;">
+        <div class="container reveal">
+            <div class="love-letter-container">
+                <div class="love-letter-paper">
+                    <div class="love-letter-text" id="love-letter-content">
+                        "My Dearest,<br><br>
+                        အမြတ်တနိုးနဲ့ ချစ်မဝနိုင်သောလေးအတွက် ပိုက်ဆံမကုန်ဘဲ gift လေးတစ်ခုဖြစ်ပါစေလို့မျှော်လင့်ပါတယ်🎉❤️. အမှတ်တရ အပုံလေးတွေနဲ့အတူ မားကို စပြီးတွေ့ခဲ့တဲ့အချိန်လေးတွေ၊ ၃ နှစ်ကျော်ကြာအတူဖြတ်သန်းခဲ့ရတဲ့ပျော်ရွှင်မှုတွေက ဘဝကပေးတဲ့ ဆုလာဒ်တစ်ခုပါပဲ။ ချစ်ခြင်းများနဲ့ထာဝရဆက်ချစ်သွားပါရစေနော်💌 ဒီစာလေးနဲ့အတူ မောင်မားကိုချစ်ကြောင်းသက်သေပြလိုက်ပါမယ် 😘🥰<br><br>
+                        Forever yours,<br>
+                        Ko Pyae"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY SECTION -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center reveal" style="font-family: var(--font-heading); margin-bottom: 40px; color: var(--primary-color);">Our Memories</h2>
+            <div class="gallery-grid reveal">
+                <!-- Replace src with your images -->
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/2.jpg" alt="Memory 1">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/1.jpg" alt="Memory 2">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/3.jpg" alt="Memory 3">
+                </div>
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/4.jpg" alt="Memory 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMISES SECTION -->
+    <section class="section-padding" style="background: url('https://placehold.co/1920x1080/ffebee/ffffff?text=Background') no-repeat center center/cover;">
+        <div class="container reveal">
+            <div class="glass-card text-center">
+                <h2 style="font-family: var(--font-heading); margin-bottom: 30px; color: var(--primary-color);">My Promises to You</h2>
+                <ul class="promises-list">
+                    <li>အသဲလေးရဲ့ စကားလည်းအမြဲ နားထောင်ပါမယ် ❤️</li>
+                    <li>အိပ်မက်တွေအမှန်တကယ်ဖြစ်လာဖို့လည်း အတူတူကြိုးစားကြရအောင် ❤️</li>
+                    <li>ဘာပဲ ဖြစ်ဖြစ် ထာဝရချစ်သွားပါမည် ❤️</li>
+                    <li>တနေ့ထက်တနေ့ပိုချစ်သွားရင်း ပြာဖြစ်သွားတဲ့အထိပေါ့ ❤️</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE SECTION -->
+    <section class="quote-section text-center reveal">
+        <div class="container">
+            <p class="big-quote">"ဒီနေ့ချစ်ပေးနိုင်သောအချစ်တွေက အကောင်းဆုံးဆိုပေမဲ့ နောက်တနေ့မှာ ပိုကောင်းလာဦးမှာပါ။</p>
+            <p style="margin-top: 20px; font-style: italic; color: #888;">— Genius KoPyae </p>
+        </div>
+    </section>
+
+    <!-- PROPOSAL SECTION -->
+    <section class="section-padding text-center" style="padding-bottom: 150px;">
+        <div class="container reveal">
+            <h2 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 20px;">One Last Question...</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">I want to spend the rest of my life making you happy.</p>
+            <button class="proposal-btn" onclick="showProposal()">Will You Stay With Me Forever?</button>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="modal" onclick="closeLightbox(event)">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="lightbox-img" class="modal-img" src="" alt="Full View">
+        </div>
+    </div>
+
+    <!-- PROPOSAL MODAL -->
+    <div id="proposal-modal" class="modal">
+        <div class="proposal-modal-content">
+            <h2 style="font-family: var(--font-script); font-size: 3rem; color: var(--primary-color);">Yo! She Said Yes! ❤️</h2>
+            <p style="margin-top: 20px; font-size: 1.2rem;">I love you so much.</p>
+            <p style="margin-top: 10px; font-size: 1rem; color: #666;">အခုအချိန်က ပြေးဖက်လို့အကောင်းဆုံးအချိန်ပဲ 🤭</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
