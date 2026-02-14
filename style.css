@@ -365,7 +365,7 @@ body {
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
     .timeline-item::after { left: 18px; }
     .left::after, .right::after { left: 18px; }
-    .left, .right { text-align: left; }
+    .left, .right { text-align: left; left: 0; }
     
     /* Love Letter */
     .love-letter-paper { 
